@@ -1,0 +1,24 @@
+.header-ctn {
+    display: flex;
+    flex-direction: row;
+    background-color: #020203;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.logo {
+    width: 178px;
+    height: 61px;
+    margin: 1em;
+}
+
+.header-link {
+    color: #ffffff;
+    text-decoration: none;
+}
