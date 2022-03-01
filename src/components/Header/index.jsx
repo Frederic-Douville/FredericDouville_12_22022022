@@ -5,20 +5,20 @@ import './header.css';
 function Header() {
     return (
         <div className="header-ctn">
-            <Link to="/">
+            <Link to="">
                 <img src={Logo} alt="logo" className="logo" />
             </Link>
             <nav>
-                <Link to="/" className="header-link">
+                <Link to="" className="header-link">
                     Accueil
                 </Link>
-                <Link to="/profil/:id" className="header-link">
+                <Link to="" className="header-link">
                     Profil
                 </Link>
-                <Link to="/" className="header-link">
+                <Link to="" className="header-link">
                     Réglage
                 </Link>
-                <Link to="/" className="header-link">
+                <Link to="" className="header-link">
                     Communauté
                 </Link>
             </nav>

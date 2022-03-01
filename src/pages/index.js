@@ -1,2 +1,2 @@
 export { default as Home } from './home';
-export { default as Profil } from './profil';
+export { default as Choice } from './choice';

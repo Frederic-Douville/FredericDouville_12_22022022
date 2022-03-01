@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url(./utils/Font/Roboto-Regular.ttf) format('truetype');
+}
+
+#root {
+    font-family: 'Roboto';
+    min-width: 1024px;
+    min-height: 780px;
+    display: grid;
+    grid-template-columns: 226px auto;
+    grid-template-rows: 91px auto;
+}

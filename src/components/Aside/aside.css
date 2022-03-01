@@ -1,0 +1,37 @@
+.aside-ctn {
+    background-color: #020202;
+    width: 117px;
+    justify-self: start;
+    grid-column: 1 / 2;
+    grid-row: 2 / span;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.aside-logo-ctn {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 6px;
+}
+
+.aside-all-logo-ctn {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.copyright-ctn {
+    width: 138px;
+    transform: rotate(-90deg);
+}
+
+.copyright {
+    font-size: 12px;
+    color: #ffffff;
+}
