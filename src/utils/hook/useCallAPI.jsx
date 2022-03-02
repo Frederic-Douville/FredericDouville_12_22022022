@@ -18,7 +18,23 @@ export function useCallAPI(id) {
                 setLoader(true);
                 const datas = await axios
                     .all(endPoints.map((endpoint) => axios.get(endpoint)))
-                    .then((data) => setDatas([...data]));
+                    .then(
+                        axios.spread(
+                            (
+                                { data: user },
+                                { data: activity },
+                                { data: averageSession },
+                                { data: performance }
+                            ) => {
+                                setDatas({
+                                    user,
+                                    activity,
+                                    averageSession,
+                                    performance,
+                                });
+                            }
+                        )
+                    );
 
                 if (datas) {
                     setLoader(false);
