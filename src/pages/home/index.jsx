@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useCallAPI } from '../../utils/hook/useCallAPI';
-import './home.css';
+import { BarChartComp } from '../../components';
 
 function Home() {
     const { id } = useParams();
@@ -8,6 +8,7 @@ function Home() {
     const { datas, loader, error } = useCallAPI(id);
 
     console.log(datas);
+    console.log(datas.activity?.data.sessions);
 
     return (
         <div className="greetings-ctn">
@@ -18,6 +19,7 @@ function Home() {
                 </span>
             </p>
             <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
+            <BarChartComp data={datas.activity?.data.sessions} />
         </div>
     );
 }
