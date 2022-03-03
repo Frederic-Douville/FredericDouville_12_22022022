@@ -23,6 +23,7 @@ function Home() {
                 <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
             </div>
             <div className="barchart-ctn">
+                <span className="barchart-title">Activité quotidienne</span>
                 <BarChartComp data={datas.activity?.data.sessions} />
             </div>
             <div className="undercharts-ctn">
