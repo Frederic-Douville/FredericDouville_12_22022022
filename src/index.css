@@ -3,6 +3,11 @@
     src: url(./utils/Font/Roboto-Regular.ttf) format('truetype');
 }
 
+@font-face {
+    font-family: 'Roboto-bold';
+    src: url(./utils/Font/Roboto-Bold.ttf) format('truetype');
+}
+
 #root {
     font-family: 'Roboto';
     min-width: 1024px;

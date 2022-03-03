@@ -22,7 +22,7 @@ function Aside() {
                 </div>
             </div>
             <div className="copyright-ctn">
-                <span className="copyright">Copyright, SportSee 2020</span>
+                <div className="copyright">Copyright, SportSee 2020</div>
             </div>
         </div>
     );
