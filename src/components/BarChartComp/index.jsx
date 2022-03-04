@@ -1,7 +1,6 @@
 import {
     BarChart,
     Bar,
-    Text,
     XAxis,
     YAxis,
     CartesianGrid,
@@ -11,7 +10,7 @@ import {
 } from 'recharts';
 import './BarChart.css';
 
-const CustomTooltip = ({ active, payload, label }) => {
+const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
         return (
             <div className="custom-tooltip">
@@ -25,9 +24,16 @@ const CustomTooltip = ({ active, payload, label }) => {
 
 function BarChartComp({ data }) {
     return (
-        <BarChart width={795} height={280} data={data}>
-            <CartesianGrid strokeDasharray="3 3" vertical={false} />
-            <XAxis dataKey="day" />
+        <BarChart width={795} height={280} data={data} barGap={8}>
+            <CartesianGrid strokeDasharray="1" vertical={false} />
+            <XAxis
+                dataKey="day"
+                tickLine={false}
+                tickMargin={10}
+                tickFormatter={(day) => {
+                    return day ? day.slice(8, 10) : null;
+                }}
+            />
             <YAxis
                 dataKey="kilogram"
                 orientation="right"
@@ -36,6 +42,7 @@ function BarChartComp({ data }) {
                 domain={['dataMin-1', 'dataMax+1']}
                 tickLine={false}
                 tickCount={4}
+                tickMargin={5}
             />
             <YAxis
                 dataKey="calories"

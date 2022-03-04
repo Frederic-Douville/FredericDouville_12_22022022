@@ -12,3 +12,15 @@
 .value {
     font-size: 7px;
 }
+
+.recharts-legend-item {
+    margin-left: 1em;
+}
+
+.recharts-legend-item-text {
+    color: black;
+}
+
+.recharts-surface {
+    padding-right: 0.5em;
+}
