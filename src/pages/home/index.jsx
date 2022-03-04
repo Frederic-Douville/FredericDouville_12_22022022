@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useCallAPI } from '../../utils/hook/useCallAPI';
-import { BarChartComp } from '../../components';
+import { BarChartComp, LineChartComp } from '../../components';
 import './home.css';
 
 function Home() {
@@ -9,7 +9,7 @@ function Home() {
     const { datas, loader, error } = useCallAPI(id);
 
     console.log(datas);
-    console.log(datas.activity?.data.sessions);
+    console.log(datas.averageSession?.data.sessions);
 
     return (
         <div className="home-ctn">
@@ -27,7 +27,12 @@ function Home() {
                 <BarChartComp data={datas.activity?.data.sessions} />
             </div>
             <div className="undercharts-ctn">
-                <div className="chart-ctn"></div>
+                <div className="chart-ctn chart-average-session">
+                    <span className="average-session-title">
+                        Durée moyenne des sessions
+                    </span>
+                    <LineChartComp data={datas.averageSession?.data.sessions} />
+                </div>
                 <div className="chart-ctn"></div>
                 <div className="chart-ctn"></div>
             </div>

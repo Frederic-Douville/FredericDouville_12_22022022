@@ -50,8 +50,17 @@
 .chart-ctn {
     width: 258px;
     height: 263px;
-    background-color: green;
     border-radius: 5px;
+}
+
+.chart-average-session {
+    position: relative;
+}
+
+.average-session-title {
+    position: absolute;
+    z-index: 1;
+    color: #ffffff;
 }
 
 .card-ctn {
