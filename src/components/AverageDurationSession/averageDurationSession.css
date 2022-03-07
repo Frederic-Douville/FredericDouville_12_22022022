@@ -1,0 +1,17 @@
+.custom-tooltip-average-session {
+    width: 39px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+.value-average-session {
+    font-family: 'Roboto-bold';
+    font-size: 8px;
+}
+
+#line-chart-ctn {
+    border-radius: 5px;
+}

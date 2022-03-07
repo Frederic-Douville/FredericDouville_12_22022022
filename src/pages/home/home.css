@@ -53,14 +53,21 @@
     border-radius: 5px;
 }
 
-.chart-average-duration-session {
+.average-duration-session-ctn {
     position: relative;
 }
 
 .average-duration-session-title {
     position: absolute;
+    left: 34px;
+    top: 29px;
     z-index: 1;
     color: #ffffff;
+    width: 147px;
+    height: 48px;
+    font-size: 15px;
+    opacity: 50%;
+    line-height: 24px;
 }
 
 .card-ctn {
@@ -75,7 +82,7 @@
 .card {
     width: 258px;
     height: 124px;
-    background-color: yellow /*#fbfbfb*/;
+    background: orange /*#fbfbfb*/;
     border-radius: 5px;
     margin-left: 31px;
 }

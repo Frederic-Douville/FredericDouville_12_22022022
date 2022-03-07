@@ -9,7 +9,6 @@ function Home() {
     const { datas, loader, error } = useCallAPI(id);
 
     console.log(datas);
-    console.log(datas.averageSession?.data.sessions);
 
     return (
         <div className="home-ctn">
@@ -29,7 +28,7 @@ function Home() {
                 <DailyActivity data={datas.activity?.data.sessions} />
             </div>
             <div className="undercharts-ctn">
-                <div className="chart-ctn chart-average-duration-session">
+                <div className="chart-ctn average-duration-session-ctn">
                     <span className="average-duration-session-title">
                         Durée moyenne des sessions
                     </span>

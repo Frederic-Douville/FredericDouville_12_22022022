@@ -1,29 +1,67 @@
-import {
-    LineChart,
-    ResponsiveContainer,
-    XAxis,
-    YAxis,
-    Line,
-    Tooltip,
-} from 'recharts';
+import { LineChart, XAxis, YAxis, Line, Tooltip } from 'recharts';
+import './averageDurationSession.css';
+
+const CustomTooltip = ({ active, payload }) => {
+    if (active && payload && payload.length) {
+        return (
+            <div className="custom-tooltip-average-session">
+                <p className="value-average-session">{payload[0].value} min</p>
+            </div>
+        );
+    }
+    return null;
+};
 
 function AverageDurationSession({ data }) {
     return (
         <LineChart
+            id="line-chart-ctn"
             width={258}
             height={263}
             data={data}
-            style={{ backgroundColor: '#ff0000', borderRadius: '5px' }}
+            onMouseMove={(event) => {
+                if (event.isTooltipActive) {
+                    const container = document.getElementById('line-chart-ctn');
+                    const widthContainer = container.clientWidth;
+                    const cursorPosition = Math.round(
+                        (event.activeCoordinate.x / widthContainer) * 100
+                    );
+                    container.style.background = `linear-gradient(90deg, rgba(255,0,0,1) ${cursorPosition}%,rgba(230,0,0,1) ${cursorPosition}% )`;
+                }
+            }}
         >
-            <XAxis dataKey="day" />
-            <YAxis hide={true} domain={['dataMin-5', 'dataMax+10']} />
-            <Tooltip />
-            <Line
-                type="monotone"
-                dataKey="sessionLength"
-                stroke="#ffffff"
-                dot={false}
+            <XAxis
+                dataKey="day"
+                axisLine={false}
+                tickLine={false}
+                tick={{
+                    fill: '#ffffff',
+                    opacity: '50%',
+                    fontSize: '12',
+                }}
+                padding={{ left: 10, right: 10 }}
+                tickFormatter={(day) => {
+                    const dayFirstLetter = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
+                    return day ? dayFirstLetter[day - 1] : null;
+                }}
             />
+            <YAxis hide={true} domain={['dataMin-10', 'dataMax+50']} />
+            <Tooltip content={<CustomTooltip />} cursor={false} />
+            <Line
+                id="chart-line"
+                type="natural"
+                dataKey="sessionLength"
+                stroke="url(#gradient-line)"
+                strokeWidth={2}
+                dot={false}
+                activeDot={{ fill: '#ffffff' }}
+            />
+            <defs>
+                <linearGradient id="gradient-line">
+                    <stop offset="0%" stopColor="rgba(255,255,255,0.4)" />
+                    <stop offset="100%" stopColor="rgba(255,255,255,1)" />
+                </linearGradient>
+            </defs>
         </LineChart>
     );
 }
