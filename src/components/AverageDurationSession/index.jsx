@@ -7,7 +7,7 @@ import {
     Tooltip,
 } from 'recharts';
 
-function LineChartComp({ data }) {
+function AverageDurationSession({ data }) {
     return (
         <LineChart
             width={258}
@@ -28,4 +28,4 @@ function LineChartComp({ data }) {
     );
 }
 
-export default LineChartComp;
+export default AverageDurationSession;

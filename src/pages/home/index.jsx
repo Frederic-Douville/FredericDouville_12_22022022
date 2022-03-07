@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useCallAPI } from '../../utils/hook/useCallAPI';
-import { BarChartComp, LineChartComp } from '../../components';
+import { AverageDurationSession, DailyActivity } from '../../components';
 import './home.css';
 
 function Home() {
@@ -22,16 +22,20 @@ function Home() {
                 </p>
                 <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
             </div>
-            <div className="barchart-ctn">
-                <span className="barchart-title">Activité quotidienne</span>
-                <BarChartComp data={datas.activity?.data.sessions} />
+            <div className="daily-activity-ctn">
+                <span className="daily-activity-title">
+                    Activité quotidienne
+                </span>
+                <DailyActivity data={datas.activity?.data.sessions} />
             </div>
             <div className="undercharts-ctn">
-                <div className="chart-ctn chart-average-session">
-                    <span className="average-session-title">
+                <div className="chart-ctn chart-average-duration-session">
+                    <span className="average-duration-session-title">
                         Durée moyenne des sessions
                     </span>
-                    <LineChartComp data={datas.averageSession?.data.sessions} />
+                    <AverageDurationSession
+                        data={datas.averageSession?.data.sessions}
+                    />
                 </div>
                 <div className="chart-ctn"></div>
                 <div className="chart-ctn"></div>

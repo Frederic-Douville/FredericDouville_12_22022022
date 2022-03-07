@@ -18,7 +18,7 @@
     color: #ff0101;
 }
 
-.barchart-ctn {
+.daily-activity-ctn {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
     background-color: #fbfbfb;
@@ -30,7 +30,7 @@
     font-size: 14px;
 }
 
-.barchart-title {
+.daily-activity-title {
     position: absolute;
     top: 25px;
     left: 32px;
@@ -53,11 +53,11 @@
     border-radius: 5px;
 }
 
-.chart-average-session {
+.chart-average-duration-session {
     position: relative;
 }
 
-.average-session-title {
+.average-duration-session-title {
     position: absolute;
     z-index: 1;
     color: #ffffff;

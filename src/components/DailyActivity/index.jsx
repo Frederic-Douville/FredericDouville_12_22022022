@@ -8,7 +8,7 @@ import {
     Legend,
     Rectangle,
 } from 'recharts';
-import './BarChart.css';
+import './dailyActivity.css';
 
 const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
@@ -22,7 +22,7 @@ const CustomTooltip = ({ active, payload }) => {
     return null;
 };
 
-function BarChartComp({ data }) {
+function DailyActivity({ data }) {
     return (
         <BarChart width={795} height={280} data={data} barGap={8}>
             <CartesianGrid strokeDasharray="1" vertical={false} />
@@ -77,4 +77,4 @@ function BarChartComp({ data }) {
     );
 }
 
-export default BarChartComp;
+export default DailyActivity;
