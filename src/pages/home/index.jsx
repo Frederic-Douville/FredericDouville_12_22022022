@@ -3,6 +3,7 @@ import { useCallAPI } from '../../utils/hook/useCallAPI';
 import {
     ActivityType,
     AverageDurationSession,
+    AverageScore,
     DailyActivity,
 } from '../../components';
 import './home.css';
@@ -12,10 +13,8 @@ function Home() {
 
     const { datas, loader, error } = useCallAPI(id);
 
-    const performanceData = datas.performance?.data.data;
-
     console.log(datas);
-    console.log(performanceData);
+    console.log(datas.user?.data);
 
     return (
         <div className="home-ctn">
@@ -44,9 +43,12 @@ function Home() {
                     />
                 </div>
                 <div className="chart-ctn activity-type-ctn">
-                    <ActivityType data={performanceData} />
+                    <ActivityType data={datas.performance?.data.data} />
                 </div>
-                <div className="chart-ctn"></div>
+                <div className="chart-ctn average-score-ctn">
+                    <span className="average-score-title"></span>
+                    <AverageScore data={[datas.user?.data]} />
+                </div>
             </div>
             <div className="card-ctn">
                 <div className="card"></div>
