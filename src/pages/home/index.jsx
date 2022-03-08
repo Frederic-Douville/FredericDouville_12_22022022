@@ -1,6 +1,10 @@
 import { useParams } from 'react-router-dom';
 import { useCallAPI } from '../../utils/hook/useCallAPI';
-import { AverageDurationSession, DailyActivity } from '../../components';
+import {
+    ActivityType,
+    AverageDurationSession,
+    DailyActivity,
+} from '../../components';
 import './home.css';
 
 function Home() {
@@ -8,7 +12,10 @@ function Home() {
 
     const { datas, loader, error } = useCallAPI(id);
 
+    const performanceData = datas.performance?.data.data;
+
     console.log(datas);
+    console.log(performanceData);
 
     return (
         <div className="home-ctn">
@@ -36,7 +43,9 @@ function Home() {
                         data={datas.averageSession?.data.sessions}
                     />
                 </div>
-                <div className="chart-ctn"></div>
+                <div className="chart-ctn activity-type-ctn">
+                    <ActivityType data={performanceData} />
+                </div>
                 <div className="chart-ctn"></div>
             </div>
             <div className="card-ctn">

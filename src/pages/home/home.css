@@ -70,6 +70,10 @@
     line-height: 24px;
 }
 
+.activty-type-ctn {
+    color: #ffffff;
+}
+
 .card-ctn {
     grid-column: 2 / 3;
     grid-row: 2 / 4;
