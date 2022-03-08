@@ -25,7 +25,7 @@ function AverageDurationSession({ data }) {
                 const container = document.getElementById('line-chart');
                 const widthContainer = container.clientWidth;
                 const cursorPosition = Math.round(
-                    (event.activeCoordinate.x / widthContainer) * 100
+                    (event.activeCoordinate?.x / widthContainer) * 100
                 );
                 container.style.background = `linear-gradient(90deg, rgba(255,0,0,1) ${cursorPosition}%,rgba(230,0,0,1) ${cursorPosition}% )`;
                 container.style.borderRadius = '5px';
