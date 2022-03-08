@@ -15,19 +15,24 @@ const CustomTooltip = ({ active, payload }) => {
 function AverageDurationSession({ data }) {
     return (
         <LineChart
-            id="line-chart-ctn"
+            id="line-chart"
+            className="line-chart-ctn"
             width={258}
             height={263}
             data={data}
+            style={{ backgroundColor: '#ff0000', borderRadius: '5px' }}
             onMouseMove={(event) => {
-                if (event.isTooltipActive) {
-                    const container = document.getElementById('line-chart-ctn');
-                    const widthContainer = container.clientWidth;
-                    const cursorPosition = Math.round(
-                        (event.activeCoordinate.x / widthContainer) * 100
-                    );
-                    container.style.background = `linear-gradient(90deg, rgba(255,0,0,1) ${cursorPosition}%,rgba(230,0,0,1) ${cursorPosition}% )`;
-                }
+                const container = document.getElementById('line-chart');
+                const widthContainer = container.clientWidth;
+                const cursorPosition = Math.round(
+                    (event.activeCoordinate.x / widthContainer) * 100
+                );
+                container.style.background = `linear-gradient(90deg, rgba(255,0,0,1) ${cursorPosition}%,rgba(230,0,0,1) ${cursorPosition}% )`;
+                container.style.borderRadius = '5px';
+            }}
+            onMouseLeave={() => {
+                const container = document.getElementById('line-chart');
+                container.style.background = 'rgba(255,0,0,1)';
             }}
         >
             <XAxis
