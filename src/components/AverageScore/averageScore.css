@@ -1,10 +1,5 @@
-.recharts-legend-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .score-legend-ctn {
+    margin: auto;
     background-color: #ffffff;
     width: 147px;
     height: 147px;
