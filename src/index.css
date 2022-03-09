@@ -10,8 +10,9 @@
 
 #root {
     font-family: 'Roboto';
-    min-width: 1024px;
-    min-height: 780px;
+    width: 1440px;
+    height: 1024px;
+    margin: auto;
     display: grid;
     grid-template-columns: 226px auto;
     grid-template-rows: 91px auto;
