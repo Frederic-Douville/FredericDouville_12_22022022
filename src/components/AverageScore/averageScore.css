@@ -1,0 +1,27 @@
+.recharts-legend-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.score-legend-ctn {
+    background-color: #ffffff;
+    width: 147px;
+    height: 147px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.score-content {
+    font-family: 'Roboto-bold';
+    font-size: 14px;
+    color: '#ff0000';
+    text-align: center;
+    line-height: 26px;
+}
+
+.score-value {
+    font-size: 20px;
+}

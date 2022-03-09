@@ -46,7 +46,7 @@ function Home() {
                     <ActivityType data={datas.performance?.data.data} />
                 </div>
                 <div className="chart-ctn average-score-ctn">
-                    <span className="average-score-title"></span>
+                    <span className="average-score-title">Score</span>
                     <AverageScore data={[datas.user?.data]} />
                 </div>
             </div>

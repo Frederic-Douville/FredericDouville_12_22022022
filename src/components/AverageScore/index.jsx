@@ -1,25 +1,55 @@
 import { RadialBarChart, RadialBar, Legend, PolarAngleAxis } from 'recharts';
+import './averageScore.css';
 
+const renderLegend = ({ payload }) => {
+    return (
+        <div className="score-legend-ctn">
+            <p className="score-content" style={{ color: '#74798c' }}>
+                <span className="score-value" style={{ color: '#282d30' }}>
+                    {payload[0].payload.value * 100}%
+                </span>
+                <br />
+                de votre
+                <br /> objectif
+            </p>
+        </div>
+    );
+};
 function AverageScore({ data }) {
-    console.log(data);
-
     return (
         <RadialBarChart
             width={258}
             height={263}
             data={data}
+            cy={132}
             innerRadius={80}
             outerRadius={80}
-            startAngle={225}
-            endAngle={-135}
+            startAngle={210}
+            endAngle={-150}
             style={{
                 backgroundColor: '#fbfbfb',
             }}
             barSize={10}
         >
-            <PolarAngleAxis type="number" angleAxisId={0} domain={[0, 1]} />
-            <RadialBar fill="#ff0000" background clockwise dataKey="score" />
-            <Legend />
+            <PolarAngleAxis
+                type="number"
+                angleAxisId={0}
+                domain={[0, 1]}
+                tick={false}
+            />
+            <RadialBar
+                dataKey="score"
+                name="objectif"
+                fill="#ff0000"
+                background={{ fill: '#fbfbfb' }}
+                clockwise
+                cornerRadius={10}
+            />
+            <Legend
+                align="center"
+                verticalAlign="middle"
+                content={renderLegend}
+            />
         </RadialBarChart>
     );
 }

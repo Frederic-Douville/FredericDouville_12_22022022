@@ -70,8 +70,18 @@
     line-height: 24px;
 }
 
-.activty-type-ctn {
-    color: #ffffff;
+.average-score-ctn {
+    position: relative;
+}
+
+.average-score-title {
+    position: absolute;
+    left: 30px;
+    top: 24px;
+    z-index: 1;
+    font-family: 'Roboto-bold';
+    font-size: 15px;
+    color: #20253a;
 }
 
 .card-ctn {
