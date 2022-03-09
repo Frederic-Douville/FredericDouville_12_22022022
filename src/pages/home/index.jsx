@@ -5,7 +5,12 @@ import {
     AverageDurationSession,
     AverageScore,
     DailyActivity,
+    Card,
 } from '../../components';
+import Energy from '../../assets/energy.svg';
+import Chicken from '../../assets/chicken.svg';
+import Apple from '../../assets/apple.svg';
+import Cheeseburger from '../../assets/cheeseburger.svg';
 import './home.css';
 
 function Home() {
@@ -15,6 +20,7 @@ function Home() {
 
     console.log(datas);
     console.log(datas.user?.data);
+    console.log(datas.user?.data.keyData.calorieCount);
 
     return (
         <div className="home-ctn">
@@ -51,10 +57,38 @@ function Home() {
                 </div>
             </div>
             <div className="card-ctn">
-                <div className="card"></div>
-                <div className="card"></div>
-                <div className="card"></div>
-                <div className="card"></div>
+                <Card
+                    data={datas.user?.data.keyData.calorieCount * 0.001}
+                    logo={Energy}
+                    desc={'logo energie'}
+                    color={'red'}
+                    unit={'kCal'}
+                    kind={'Calories'}
+                />
+                <Card
+                    data={datas.user?.data.keyData.proteinCount}
+                    logo={Chicken}
+                    desc={'logo cuisse de poulet'}
+                    color={'blue'}
+                    unit={'g'}
+                    kind={'Protéines'}
+                />
+                <Card
+                    data={datas.user?.data.keyData.carbohydrateCount}
+                    logo={Apple}
+                    desc={'logo pomme'}
+                    color={'yellow'}
+                    unit={'g'}
+                    kind={'Glucides'}
+                />
+                <Card
+                    data={datas.user?.data.keyData.lipidCount}
+                    logo={Cheeseburger}
+                    desc={'logo cheeseburger'}
+                    color={'pink'}
+                    unit={'g'}
+                    kind={'Lipides'}
+                />
             </div>
         </div>
     );

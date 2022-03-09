@@ -1,0 +1,44 @@
+.card-logo-ctn {
+    width: 60px;
+    height: 60px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 24px 0 32px;
+}
+
+.card-logo-bg-red {
+    background-color: rgba(255, 0, 0, 0.06);
+}
+
+.card-logo-bg-blue {
+    background-color: rgba(74, 184, 255, 0.1);
+}
+
+.card-logo-bg-yellow {
+    background-color: rgba(249, 206, 35, 0.1);
+}
+
+.card-logo-bg-pink {
+    background-color: rgba(253, 81, 129, 0.1);
+}
+
+.card-content-ctn {
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.card-content-value {
+    font-family: 'Roboto-bold';
+    font-size: 20px;
+    color: #282d30;
+}
+
+.card-content-kind {
+    font-size: 14px;
+    color: #74798c;
+}
