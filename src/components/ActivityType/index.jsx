@@ -12,8 +12,8 @@ function ActivityType({ data }) {
             outerRadius={90}
             width={258}
             height={263}
-            startAngle={30}
-            endAngle={-330}
+            startAngle={-150}
+            endAngle={210}
             data={data}
             style={{
                 background: '#282d30',
