@@ -20,7 +20,11 @@ function AverageDurationSession({ data }) {
             width={258}
             height={263}
             data={data}
-            style={{ backgroundColor: '#ff0000', borderRadius: '5px' }}
+            style={{
+                backgroundColor: '#ff0000',
+                borderRadius: '5px',
+                padding: '0',
+            }}
             onMouseMove={(event) => {
                 const container = document.getElementById('line-chart');
                 const widthContainer = container.clientWidth;

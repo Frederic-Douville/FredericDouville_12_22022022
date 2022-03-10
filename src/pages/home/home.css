@@ -4,6 +4,14 @@
     grid-template-rows: 234px 320px 291px 88px;
 }
 
+.error-ctn {
+    font-size: 20px;
+    color: #ff0000;
+    position: absolute;
+    top: 512px;
+    left: 870px;
+}
+
 .greetings-ctn {
     font-size: 18px;
     grid-column: 1 / 2;
@@ -36,6 +44,7 @@
     left: 32px;
     font-family: 'Roboto-bold';
     font-size: 15px;
+    color: #20253a;
 }
 
 .undercharts-ctn {

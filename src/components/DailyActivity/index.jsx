@@ -10,6 +10,20 @@ import {
 } from 'recharts';
 import './dailyActivity.css';
 
+const renderLegend = () => {
+    return (
+        <div className="daily-activity-legend">
+            <p>
+                <div className="icon-circle icon-black"></div>Poids (kg)
+            </p>
+            <p>
+                <div className="icon-circle icon-red"></div>Calories brûlées
+                (kCal)
+            </p>
+        </div>
+    );
+};
+
 const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
         return (
@@ -28,11 +42,13 @@ function DailyActivity({ data }) {
             <CartesianGrid strokeDasharray="1" vertical={false} />
             <XAxis
                 dataKey="day"
+                tick={{ fill: '#9b9eac' }}
                 tickLine={false}
                 tickMargin={10}
                 tickFormatter={(day) => {
                     return day ? day.slice(8, 10) : null;
                 }}
+                stroke="#dedede"
             />
             <YAxis
                 dataKey="kilogram"
@@ -40,6 +56,7 @@ function DailyActivity({ data }) {
                 axisLine={false}
                 width={40}
                 domain={['dataMin-1', 'dataMax+1']}
+                tick={{ fill: '#9b9eac' }}
                 tickLine={false}
                 tickCount={4}
                 tickMargin={5}
@@ -50,14 +67,8 @@ function DailyActivity({ data }) {
                 yAxisId={1}
                 hide={true}
             />
-            <Tooltip content={<CustomTooltip />} cursor={{ fill: '#c4c4c4' }} />
-            <Legend
-                align="right"
-                verticalAlign="top"
-                iconType="circle"
-                iconSize={8}
-                height={50}
-            />
+            <Tooltip content={CustomTooltip} cursor={{ fill: '#c4c4c4' }} />
+            <Legend verticalAlign="top" content={renderLegend} height={75} />
             <Bar
                 dataKey="kilogram"
                 name="Poids (kg)"

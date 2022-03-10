@@ -28,6 +28,7 @@ function AverageScore({ data }) {
             endAngle={-150}
             style={{
                 backgroundColor: '#fbfbfb',
+                borderRadius: '5px',
             }}
             barSize={10}
         >

@@ -13,10 +13,37 @@
     font-size: 7px;
 }
 
-.recharts-legend-item {
-    margin-left: 1em;
+.daily-activity-legend {
+    position: absolute;
+    width: 295px;
+    right: 0;
+    top: 0;
+    margin-right: 1em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: #74798c;
 }
 
-.recharts-surface {
-    padding-right: 0.5em;
+.daily-activity-legend p {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.icon-circle {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 1em;
+}
+
+.icon-black {
+    background-color: #282d30;
+}
+
+.icon-red {
+    background-color: #e60000;
 }
