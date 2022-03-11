@@ -5,11 +5,11 @@
 }
 
 .error-ctn {
-    font-size: 20px;
+    font-size: 24px;
     color: #ff0000;
     position: absolute;
     top: 512px;
-    left: 870px;
+    left: 780px;
 }
 
 .greetings-ctn {

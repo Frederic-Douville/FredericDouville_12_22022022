@@ -3,7 +3,7 @@
     width: 117px;
     justify-self: start;
     grid-column: 1 / 2;
-    grid-row: 2 / span;
+    grid-row: 2 / 3;
     display: grid;
     grid-template-rows: 256px 316px 361px;
     grid-template-columns: 117px;

@@ -8,12 +8,12 @@ function Choice() {
                 Choisir un profil:
                 <br />
                 <br />
-                <Link to="/12" className="choice-link">
+                <Link to="/home/12" className="choice-link">
                     Karl Dovineau
                 </Link>
                 <br />
                 <br />
-                <Link to="/18" className="choice-link">
+                <Link to="/home/18" className="choice-link">
                     Cecilia Ratorez
                 </Link>
             </p>

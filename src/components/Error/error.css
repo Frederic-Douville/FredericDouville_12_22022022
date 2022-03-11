@@ -1,0 +1,24 @@
+.error-404-ctn {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 10em auto 0 auto;
+}
+
+.error-404-ctn p {
+    color: black;
+    font-size: 30px;
+}
+
+.error-number {
+    font-family: 'Roboto-bold';
+    color: black;
+    font-size: 100px;
+}
+
+.error-link {
+    color: #ff0101;
+    font-size: 24px;
+    text-decoration: none;
+}

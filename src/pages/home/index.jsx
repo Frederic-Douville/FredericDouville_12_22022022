@@ -17,7 +17,7 @@ import './loader.css';
 function Home() {
     const { id } = useParams();
     const { datas, loader, error } = useCallAPI(id);
-    console.log(loader);
+
     console.log(datas);
     if (error && !loader) {
         return (

@@ -13,10 +13,10 @@ export function useCallAPI(id) {
             `http://localhost:3000/user/${id}/average-sessions`,
             `http://localhost:3000/user/${id}/performance`,
         ];
-        function getDatas() {
+        async function getDatas() {
             try {
                 setLoader(true);
-                const datas = axios
+                await axios
                     .all(endPoints.map((endpoint) => axios.get(endpoint)))
                     .then(
                         axios.spread(
@@ -32,12 +32,10 @@ export function useCallAPI(id) {
                                     averageSession,
                                     performance,
                                 });
+                                setLoader(false);
                             }
                         )
                     );
-                if (datas) {
-                    setLoader(false);
-                }
             } catch (error) {
                 setLoader(false);
                 setError(true);
