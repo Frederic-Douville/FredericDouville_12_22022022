@@ -17,8 +17,41 @@ import './loader.css';
 function Home() {
     const { id } = useParams();
     const { datas, loader, error } = useCallAPI(id);
+    const cardInfoArray = [
+        {
+            data: datas.user?.data.keyData.calorieCount * 0.001,
+            logo: Energy,
+            desc: 'logo energie',
+            color: 'red',
+            unit: 'kCal',
+            kind: 'Calories',
+        },
+        {
+            data: datas.user?.data.keyData.proteinCount,
+            logo: Chicken,
+            desc: 'logo cuisse de poulet',
+            color: 'blue',
+            unit: 'g',
+            kind: 'Protéines',
+        },
+        {
+            data: datas.user?.data.keyData.carbohydrateCount,
+            logo: Apple,
+            desc: 'logo pomme',
+            color: 'yellow',
+            unit: 'g',
+            kind: 'Glucides',
+        },
+        {
+            data: datas.user?.data.keyData.lipidCount,
+            logo: Cheeseburger,
+            desc: 'logo cheeseburger',
+            color: 'pink',
+            unit: 'g',
+            kind: 'Lipides',
+        },
+    ];
 
-    console.log(datas);
     if (error && !loader) {
         return (
             <div className="error-ctn">
@@ -76,38 +109,28 @@ function Home() {
                         </div>
                     </div>
                     <div className="card-ctn">
-                        <Card
-                            data={datas.user?.data.keyData.calorieCount * 0.001}
-                            logo={Energy}
-                            desc={'logo energie'}
-                            color={'red'}
-                            unit={'kCal'}
-                            kind={'Calories'}
-                        />
-                        <Card
-                            data={datas.user?.data.keyData.proteinCount}
-                            logo={Chicken}
-                            desc={'logo cuisse de poulet'}
-                            color={'blue'}
-                            unit={'g'}
-                            kind={'Protéines'}
-                        />
-                        <Card
-                            data={datas.user?.data.keyData.carbohydrateCount}
-                            logo={Apple}
-                            desc={'logo pomme'}
-                            color={'yellow'}
-                            unit={'g'}
-                            kind={'Glucides'}
-                        />
-                        <Card
-                            data={datas.user?.data.keyData.lipidCount}
-                            logo={Cheeseburger}
-                            desc={'logo cheeseburger'}
-                            color={'pink'}
-                            unit={'g'}
-                            kind={'Lipides'}
-                        />
+                        {cardInfoArray.map(
+                            ({
+                                data,
+                                logo,
+                                desc,
+                                color,
+                                unit,
+                                kind,
+                                index,
+                            }) => (
+                                <Card
+                                    key={index}
+                                    data={data}
+                                    logo={logo}
+                                    desc={desc}
+                                    color={color}
+                                    unit={unit}
+                                    kind={kind}
+                                />
+                            )
+                        )}
+                        ;
                     </div>
                 </>
             )}
