@@ -17,3 +17,16 @@
     grid-template-columns: 226px auto;
     grid-template-rows: 91px auto;
 }
+
+@media screen and (max-width: 1024px) {
+    body {
+        margin: 0;
+    }
+    #root {
+        width: 1024px;
+        height: 768px;
+        grid-template-columns: 80px 944px;
+        grid-template-rows: 63px 705px;
+        margin: none;
+    }
+}

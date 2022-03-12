@@ -113,3 +113,49 @@
     justify-content: flex-start;
     align-items: center;
 }
+
+@media screen and (max-width: 1024px) {
+    .home-ctn {
+        grid-template-columns: 944px;
+        grid-template-rows: 34px 80px 320px 271px;
+    }
+    .greetings-ctn {
+        font-size: 20px;
+        width: 100%;
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-end;
+    }
+    .greetings-ctn p {
+        margin: 0 10px 0 10px;
+    }
+    .salutation {
+        font-size: 24px;
+    }
+    .card-ctn {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        flex-direction: row;
+        align-items: center;
+        margin: 0 10px 0 10px;
+    }
+    .card {
+        width: 206px;
+        height: 65px;
+        margin-left: 0;
+    }
+    .daily-activity-ctn {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+        border-radius: 5px;
+        margin: 0 10px 0 10px;
+    }
+    .undercharts-ctn {
+        grid-column: 1 / 2;
+        grid-row: 4 / 5;
+        margin: 0 10px 0 10px;
+    }
+}

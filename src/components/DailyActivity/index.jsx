@@ -8,17 +8,28 @@ import {
     Legend,
     Rectangle,
 } from 'recharts';
+import RedCircle from '../../assets/Red_circle.svg';
+import BlackCircle from '../../assets/Black_circle.svg';
 import './dailyActivity.css';
 
 const renderLegend = () => {
     return (
         <div className="daily-activity-legend">
             <p>
-                <div className="icon-circle icon-black"></div>Poids (kg)
+                <img
+                    className="icon-circle"
+                    src={RedCircle}
+                    alt="cercle rouge"
+                />
+                Poids (kg)
             </p>
             <p>
-                <div className="icon-circle icon-red"></div>Calories brûlées
-                (kCal)
+                <img
+                    className="icon-circle"
+                    src={BlackCircle}
+                    alt="cercle noir"
+                />
+                Calories brûlées (kCal)
             </p>
         </div>
     );

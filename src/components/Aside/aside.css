@@ -45,3 +45,23 @@
     transform: rotate(-90deg);
     margin-bottom: 120px;
 }
+
+@media screen and (max-width: 1024px) {
+    .aside-ctn {
+        width: 75px;
+        grid-template-rows: 80px 316px 309px;
+        grid-template-columns: 75px;
+    }
+    .aside-all-logo-ctn {
+        margin-left: 12.5px;
+    }
+    .aside-logo-ctn {
+        width: 50px;
+        height: 50px;
+    }
+
+    .copyright-ctn {
+        grid-row: 3 / 4;
+        width: 75px;
+    }
+}
