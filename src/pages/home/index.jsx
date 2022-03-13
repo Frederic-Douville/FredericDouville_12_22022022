@@ -120,7 +120,7 @@ function Home() {
                                 index,
                             }) => (
                                 <Card
-                                    key={index}
+                                    key={kind + index}
                                     data={data}
                                     logo={logo}
                                     desc={desc}

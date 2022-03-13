@@ -1,4 +1,5 @@
 import { LineChart, XAxis, YAxis, Line, Tooltip } from 'recharts';
+import PropTypes from 'prop-types';
 import './averageDurationSession.css';
 
 const CustomTooltip = ({ active, payload }) => {
@@ -74,5 +75,9 @@ function AverageDurationSession({ data }) {
         </LineChart>
     );
 }
+
+AverageDurationSession.propTypes = {
+    data: PropTypes.array,
+};
 
 export default AverageDurationSession;

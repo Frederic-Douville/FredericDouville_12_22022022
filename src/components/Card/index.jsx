@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import './card.css';
 
 function Card({ data, logo, desc, color, unit, kind }) {
@@ -16,5 +17,14 @@ function Card({ data, logo, desc, color, unit, kind }) {
         </div>
     );
 }
+
+Card.propTypes = {
+    data: PropTypes.number,
+    logo: PropTypes.elementType,
+    desc: PropTypes.string,
+    color: PropTypes.string,
+    unit: PropTypes.string,
+    kind: PropTypes.string,
+};
 
 export default Card;

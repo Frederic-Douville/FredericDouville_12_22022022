@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import axios from 'axios';
 
 export function useCallAPI(id) {
@@ -46,3 +47,7 @@ export function useCallAPI(id) {
     }, [id]);
     return { datas, loader, error };
 }
+
+useCallAPI.propTypes = {
+    id: PropTypes.number,
+};

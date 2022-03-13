@@ -5,6 +5,7 @@ import {
     RadarChart,
     Radar,
 } from 'recharts';
+import PropTypes from 'prop-types';
 
 function ActivityType({ data }) {
     return (
@@ -55,5 +56,9 @@ function ActivityType({ data }) {
         </RadarChart>
     );
 }
+
+ActivityType.propTypes = {
+    data: PropTypes.array,
+};
 
 export default ActivityType;

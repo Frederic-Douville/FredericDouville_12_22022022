@@ -10,6 +10,7 @@ import {
 } from 'recharts';
 import RedCircle from '../../assets/Red_circle.svg';
 import BlackCircle from '../../assets/Black_circle.svg';
+import PropTypes from 'prop-types';
 import './dailyActivity.css';
 
 const renderLegend = () => {
@@ -98,5 +99,9 @@ function DailyActivity({ data }) {
         </BarChart>
     );
 }
+
+DailyActivity.propTypes = {
+    data: PropTypes.array,
+};
 
 export default DailyActivity;

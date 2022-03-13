@@ -1,4 +1,5 @@
 import { RadialBarChart, RadialBar, Legend, PolarAngleAxis } from 'recharts';
+import PropTypes from 'prop-types';
 import './averageScore.css';
 
 const renderLegend = ({ payload }) => {
@@ -54,5 +55,9 @@ function AverageScore({ data }) {
         </RadialBarChart>
     );
 }
+
+AverageScore.propTypes = {
+    data: PropTypes.array,
+};
 
 export default AverageScore;
