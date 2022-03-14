@@ -2,6 +2,13 @@ import { LineChart, XAxis, YAxis, Line, Tooltip } from 'recharts';
 import PropTypes from 'prop-types';
 import './averageDurationSession.css';
 
+/**
+ * return a specified tooltip which which appear when the cursor is hover a point of the line
+ * @param {boolean} active
+ * @param {number} payload
+ * @returns {DOMImplementation}
+ */
+
 const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
         return (
@@ -13,6 +20,11 @@ const CustomTooltip = ({ active, payload }) => {
     return null;
 };
 
+/**
+ * implement a line chart which show the user's average duration session
+ * @param {array} data array of object
+ * @returns {DOMImplementation}
+ */
 function AverageDurationSession({ data }) {
     return (
         <LineChart

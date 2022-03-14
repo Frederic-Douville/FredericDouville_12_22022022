@@ -7,6 +7,12 @@ import {
 } from 'recharts';
 import PropTypes from 'prop-types';
 
+/**
+ * implement a radar chart which show the user's statistic performance
+ * @param {array} data array of object
+ * @returns {DOMImplementation}
+ */
+
 function ActivityType({ data }) {
     return (
         <RadarChart

@@ -1,6 +1,16 @@
 import PropTypes from 'prop-types';
 import './card.css';
 
+/**
+ * implement a card which show one the user's food information
+ * @param {array} data array of object
+ * @param {elementType} logo
+ * @param {string} desc
+ * @param {string} color
+ * @param {string} unit
+ * @param {string} kind
+ * @returns {DOMImplementation}
+ */
 function Card({ data, logo, desc, color, unit, kind }) {
     return (
         <div className="card">

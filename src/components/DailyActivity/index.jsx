@@ -13,6 +13,7 @@ import BlackCircle from '../../assets/Black_circle.svg';
 import PropTypes from 'prop-types';
 import './dailyActivity.css';
 
+/** return a specified legend of the chart */
 const renderLegend = () => {
     return (
         <div className="daily-activity-legend">
@@ -36,6 +37,13 @@ const renderLegend = () => {
     );
 };
 
+/**
+ * return a specified tooltip which appear when the cursor is hover a couple of bar
+ * @param {boolean} active
+ * @param {number} payload
+ * @returns {DOMImplementation}
+ */
+
 const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
         return (
@@ -48,6 +56,11 @@ const CustomTooltip = ({ active, payload }) => {
     return null;
 };
 
+/**
+ * implement a bar chart which show the user's daily activity
+ * @param {array} data array of object
+ * @returns {DOMImplementation}
+ */
 function DailyActivity({ data }) {
     return (
         <BarChart width={795} height={280} data={data} barGap={8}>

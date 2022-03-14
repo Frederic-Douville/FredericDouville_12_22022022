@@ -2,6 +2,14 @@ import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 
+/**
+ * Send a request to API with an array of endpoints with ID user in order to have user information
+ * @param {Number} id
+ * @returns {Promise}
+ * @returns {Promise.resolve<Array>} datas Array of object
+ * @returns {Promise.resolve<Boolean>} loader
+ * @returns {Promise.reject<Error>} error
+ */
 export function useCallAPI(id) {
     const [datas, setDatas] = useState([]);
     const [loader, setLoader] = useState(false);

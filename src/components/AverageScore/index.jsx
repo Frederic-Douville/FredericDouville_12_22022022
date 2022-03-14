@@ -2,6 +2,12 @@ import { RadialBarChart, RadialBar, Legend, PolarAngleAxis } from 'recharts';
 import PropTypes from 'prop-types';
 import './averageScore.css';
 
+/**
+ * return a specified legend of the chart
+ * @param {boolean} payload
+ * @returns {DOMImplementation}
+ */
+
 const renderLegend = ({ payload }) => {
     return (
         <div className="score-legend-ctn">
@@ -16,6 +22,12 @@ const renderLegend = ({ payload }) => {
         </div>
     );
 };
+
+/**
+ * implement a radial bar chart which show the user's average score
+ * @param {array} data array of object
+ * @returns {DOMImplementation}
+ */
 function AverageScore({ data }) {
     return (
         <RadialBarChart
