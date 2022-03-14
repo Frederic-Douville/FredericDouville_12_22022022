@@ -3,7 +3,7 @@
 Author: Frédéric Douville
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-# 1. General information
+## 1. General information
 
 To start this project, you have to clone the [API repository](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard) on your computer, and follow the instructions to launch it on local [http://localhost:3000](http://localhost:3000).
 
