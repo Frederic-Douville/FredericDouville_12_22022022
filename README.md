@@ -1,7 +1,7 @@
 # OpenClassRooms - Project 12 - Build an analytics dashboard with React
 
-Author: Frédéric Douville
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+-   Author: Frédéric Douville
+-   This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## 1. General information
 
