@@ -7,9 +7,10 @@
 .error-ctn {
     font-size: 24px;
     color: #ff0000;
-    position: absolute;
-    top: 512px;
-    left: 780px;
+    grid-row: 2 / 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .greetings-ctn {
