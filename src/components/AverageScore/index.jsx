@@ -4,7 +4,7 @@ import './averageScore.css';
 
 /**
  * return a specified legend of the chart
- * @param {boolean} payload
+ * @param {number} payload
  * @returns {DOMImplementation}
  */
 
