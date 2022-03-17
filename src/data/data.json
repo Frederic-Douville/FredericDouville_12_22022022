@@ -1,6 +1,6 @@
 [
     {
-        "id": 12,
+        "id": "12",
         "userInfos": {
             "firstName": "Karl",
             "lastName": "Dovineau",
@@ -108,7 +108,7 @@
         ]
     },
     {
-        "id": 18,
+        "id": "18",
         "userInfos": {
             "firstName": "Cecilia",
             "lastName": "Ratorez",

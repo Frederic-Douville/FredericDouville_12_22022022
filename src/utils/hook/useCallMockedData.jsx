@@ -1,22 +1,22 @@
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import axios from 'axios';
 
 export function useCallMockedData(id, url) {
     const [datas, setDatas] = useState([]);
     const [loader, setLoader] = useState(false);
     const [error, setError] = useState(false);
-
+    console.log(id);
     useEffect(() => {
+        if (!url) return setError(true);
         async function getDatas() {
             try {
                 setLoader(true);
-                const datas = await axios.get(url);
-
-                if (datas) {
-                    setDatas(datas);
-                    setLoader(false);
-                }
+                const response = await fetch(url);
+                const datas = await response.json();
+                setDatas(() =>
+                    datas.map((item) => (item.id == id ? setDatas(item) : null))
+                );
+                setLoader(false);
             } catch (error) {
                 setLoader(false);
                 setError(true);

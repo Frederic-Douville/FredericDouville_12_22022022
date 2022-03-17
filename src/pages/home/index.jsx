@@ -20,7 +20,7 @@ function Home() {
     //const { datas, loader, error } = useCallAPI(id);
 
     const urlDataMocked =
-        'https://raw.githubusercontent.com/Frederic-Douville/FredericDouville_12_22022022/main/src/data/data.js';
+        'https://raw.githubusercontent.com/Frederic-Douville/FredericDouville_12_22022022/main/src/data/data.json';
     const { datas, loader, error } = useCallMockedData(id, urlDataMocked);
     console.log(datas);
 
