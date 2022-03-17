@@ -5,7 +5,7 @@ export function useCallMockedData(id, url) {
     const [datas, setDatas] = useState([]);
     const [loader, setLoader] = useState(false);
     const [error, setError] = useState(false);
-    console.log(id);
+
     useEffect(() => {
         if (!url) return setError(true);
         async function getDatas() {
@@ -14,7 +14,9 @@ export function useCallMockedData(id, url) {
                 const response = await fetch(url);
                 const datas = await response.json();
                 setDatas(() =>
-                    datas.map((item) => (item.id == id ? setDatas(item) : null))
+                    datas.map((item) =>
+                        item.id === id ? setDatas(item) : null
+                    )
                 );
                 setLoader(false);
             } catch (error) {
