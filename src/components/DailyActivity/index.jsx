@@ -20,16 +20,16 @@ const renderLegend = () => {
             <p>
                 <img
                     className="icon-circle"
-                    src={RedCircle}
-                    alt="cercle rouge"
+                    src={BlackCircle}
+                    alt="cercle noir"
                 />
                 Poids (kg)
             </p>
             <p>
                 <img
                     className="icon-circle"
-                    src={BlackCircle}
-                    alt="cercle noir"
+                    src={RedCircle}
+                    alt="cercle rouge"
                 />
                 Calories brûlées (kCal)
             </p>
