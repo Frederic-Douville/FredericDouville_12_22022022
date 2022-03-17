@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useCallAPI } from '../../utils/hook/useCallAPI';
+import { useCallMockedData } from '../../utils/hook/useCallMockedData';
 import {
     ActivityType,
     AverageDurationSession,
@@ -16,7 +17,13 @@ import './loader.css';
 
 function Home() {
     const { id } = useParams();
-    const { datas, loader, error } = useCallAPI(id);
+    //const { datas, loader, error } = useCallAPI(id);
+
+    const urlDataMocked =
+        'https://raw.githubusercontent.com/Frederic-Douville/FredericDouville_12_22022022/main/src/data/data.js';
+    const { datas, loader, error } = useCallMockedData(id, urlDataMocked);
+    console.log(datas);
+
     const cardInfoArray = [
         {
             data: datas.user?.data.keyData.calorieCount * 0.001,
