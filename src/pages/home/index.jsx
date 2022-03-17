@@ -17,16 +17,41 @@ import './loader.css';
 
 function Home() {
     const { id } = useParams();
-    //const { datas, loader, error } = useCallAPI(id);
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // To use the API call, uncomment l.24 to l.33 and comment l.39 to l.50 (launch before the API in Docker or else first)
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    const urlDataMocked =
-        'https://raw.githubusercontent.com/Frederic-Douville/FredericDouville_12_22022022/main/src/data/data.json';
-    const { datas, loader, error } = useCallMockedData(id, urlDataMocked);
-    console.log(datas);
+    const { datas, loader, error } = useCallAPI(id);
+    const firstName = datas.user?.data.userInfos.firstName;
+    const calorieCount = datas.user?.data.keyData.calorieCount;
+    const proteinCount = datas.user?.data.keyData.proteinCount;
+    const carbohydrateCount = datas.user?.data.keyData.carbohydrateCount;
+    const lipidCount = datas.user?.data.keyData.lipidCount;
+    const dailyActivity = datas.activity?.data.sessions;
+    const performance = datas.performance?.data.data;
+    const score = datas.user?.data;
+    const sessions = datas.averageSession?.data.sessions;
+
+    ///////////////////////////////////////////////////////////////////////////////
+    // To use the mocked data call, uncomment l.39 to l.50 and comment l.24 to l.33
+    ///////////////////////////////////////////////////////////////////////////////
+
+    // const urlDataMocked =
+    //     'https://raw.githubusercontent.com/Frederic-Douville/FredericDouville_12_22022022/main/src/data/data.json';
+    // const { datas, loader, error } = useCallMockedData(id, urlDataMocked);
+    // const firstName = datas.userInfos?.firstName;
+    // const calorieCount = datas.keyData?.calorieCount;
+    // const proteinCount = datas.keyData?.proteinCount;
+    // const carbohydrateCount = datas.keyData?.carbohydrateCount;
+    // const lipidCount = datas.keyData?.lipidCount;
+    // const dailyActivity = datas?.dailyActivity;
+    // const performance = datas?.performance;
+    // const score = { score: datas?.score };
+    // const sessions = datas?.sessions;
 
     const cardInfoArray = [
         {
-            data: datas.user?.data.keyData.calorieCount * 0.001,
+            data: calorieCount * 0.001,
             logo: Energy,
             desc: 'logo energie',
             color: 'red',
@@ -34,7 +59,7 @@ function Home() {
             kind: 'Calories',
         },
         {
-            data: datas.user?.data.keyData.proteinCount,
+            data: proteinCount,
             logo: Chicken,
             desc: 'logo cuisse de poulet',
             color: 'blue',
@@ -42,7 +67,7 @@ function Home() {
             kind: 'Protéines',
         },
         {
-            data: datas.user?.data.keyData.carbohydrateCount,
+            data: carbohydrateCount,
             logo: Apple,
             desc: 'logo pomme',
             color: 'yellow',
@@ -50,7 +75,7 @@ function Home() {
             kind: 'Glucides',
         },
         {
-            data: datas.user?.data.keyData.lipidCount,
+            data: lipidCount,
             logo: Cheeseburger,
             desc: 'logo cheeseburger',
             color: 'pink',
@@ -82,10 +107,7 @@ function Home() {
                 <>
                     <div className="greetings-ctn">
                         <p className="salutation">
-                            Bonjour{' '}
-                            <span className="name">
-                                {datas.user?.data.userInfos.firstName}
-                            </span>
+                            Bonjour <span className="name">{firstName}</span>
                         </p>
                         <p>
                             Félicitation ! Vous avez explosé vos objectifs hier
@@ -96,23 +118,21 @@ function Home() {
                         <span className="daily-activity-title">
                             Activité quotidienne
                         </span>
-                        <DailyActivity data={datas.activity?.data.sessions} />
+                        <DailyActivity data={dailyActivity} />
                     </div>
                     <div className="undercharts-ctn">
                         <div className="chart-ctn average-duration-session-ctn">
                             <span className="average-duration-session-title">
                                 Durée moyenne des sessions
                             </span>
-                            <AverageDurationSession
-                                data={datas.averageSession?.data.sessions}
-                            />
+                            <AverageDurationSession data={sessions} />
                         </div>
                         <div className="chart-ctn activity-type-ctn">
-                            <ActivityType data={datas.performance?.data.data} />
+                            <ActivityType data={performance} />
                         </div>
                         <div className="chart-ctn average-score-ctn">
                             <span className="average-score-title">Score</span>
-                            <AverageScore data={[datas.user?.data]} />
+                            <AverageScore data={[score]} />
                         </div>
                     </div>
                     <div className="card-ctn">
