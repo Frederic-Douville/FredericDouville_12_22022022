@@ -21,33 +21,33 @@ function Home() {
     // To use the API call, uncomment l.24 to l.33 and comment l.39 to l.50 (launch before the API in Docker or else first)
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    const { datas, loader, error } = useCallAPI(id);
-    const firstName = datas.user?.data.userInfos.firstName;
-    const calorieCount = datas.user?.data.keyData.calorieCount;
-    const proteinCount = datas.user?.data.keyData.proteinCount;
-    const carbohydrateCount = datas.user?.data.keyData.carbohydrateCount;
-    const lipidCount = datas.user?.data.keyData.lipidCount;
-    const dailyActivity = datas.activity?.data.sessions;
-    const performance = datas.performance?.data.data;
-    const score = datas.user?.data;
-    const sessions = datas.averageSession?.data.sessions;
+    // const { datas, loader, error } = useCallAPI(id);
+    // const firstName = datas.user?.data.userInfos.firstName;
+    // const calorieCount = datas.user?.data.keyData.calorieCount;
+    // const proteinCount = datas.user?.data.keyData.proteinCount;
+    // const carbohydrateCount = datas.user?.data.keyData.carbohydrateCount;
+    // const lipidCount = datas.user?.data.keyData.lipidCount;
+    // const dailyActivity = datas.activity?.data.sessions;
+    // const performance = datas.performance?.data.data;
+    // const score = datas.user?.data;
+    // const sessions = datas.averageSession?.data.sessions;
 
     ///////////////////////////////////////////////////////////////////////////////
     // To use the mocked data call, uncomment l.39 to l.50 and comment l.24 to l.33
     ///////////////////////////////////////////////////////////////////////////////
 
-    // const urlDataMocked =
-    //     'https://raw.githubusercontent.com/Frederic-Douville/FredericDouville_12_22022022/main/src/data/data.json';
-    // const { datas, loader, error } = useCallMockedData(id, urlDataMocked);
-    // const firstName = datas.userInfos?.firstName;
-    // const calorieCount = datas.keyData?.calorieCount;
-    // const proteinCount = datas.keyData?.proteinCount;
-    // const carbohydrateCount = datas.keyData?.carbohydrateCount;
-    // const lipidCount = datas.keyData?.lipidCount;
-    // const dailyActivity = datas?.dailyActivity;
-    // const performance = datas?.performance;
-    // const score = { score: datas?.score };
-    // const sessions = datas?.sessions;
+    const urlDataMocked =
+        'https://raw.githubusercontent.com/Frederic-Douville/FredericDouville_12_22022022/main/src/data/data.json';
+    const { datas, loader, error } = useCallMockedData(id, urlDataMocked);
+    const firstName = datas.userInfos?.firstName;
+    const calorieCount = datas.keyData?.calorieCount;
+    const proteinCount = datas.keyData?.proteinCount;
+    const carbohydrateCount = datas.keyData?.carbohydrateCount;
+    const lipidCount = datas.keyData?.lipidCount;
+    const dailyActivity = datas?.dailyActivity;
+    const performance = datas?.performance;
+    const score = { score: datas?.score };
+    const sessions = datas?.sessions;
 
     const cardInfoArray = [
         {
